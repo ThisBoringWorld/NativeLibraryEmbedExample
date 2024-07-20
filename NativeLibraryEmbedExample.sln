@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeLibraryEmbedExample", "NativeLibraryEmbedExample\NativeLibraryEmbedExample.csproj", "{BB954A78-2DC1-4A09-89AE-71A5A2530D49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB954A78-2DC1-4A09-89AE-71A5A2530D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB954A78-2DC1-4A09-89AE-71A5A2530D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB954A78-2DC1-4A09-89AE-71A5A2530D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB954A78-2DC1-4A09-89AE-71A5A2530D49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF90521F-F2F8-4661-BAD3-3D359A2D42D2}
+	EndGlobalSection
+EndGlobal

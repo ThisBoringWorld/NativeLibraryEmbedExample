@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(PublishAot)' == 'true' and '$(Configuration)' == 'Release' and '$(RuntimeIdentifier)' != ''">
+    <EmbeddedResource Include="$(IntermediateOutputPath)embed_depends_files\**\*" Link="\%(RecursiveDir)%(FileName)%(Extension)">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="__CopyEmbedDependsFilesToIntermediateOutput"
+      AfterTargets="CopyFilesToOutputDirectory"
+      Condition="'$(PublishAot)' == 'true' and '$(Configuration)' == 'Release' and '$(RuntimeIdentifier)' != ''">
+    <ItemGroup>
+      <EmbedDependsFiles Include="$(OutputPath)e_sqlite3.*;$(OutputPath)libe_sqlite3.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(EmbedDependsFiles)" DestinationFolder="$(IntermediateOutputPath)embed_depends_files\" SkipUnchangedFiles="true" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.7" />
+  </ItemGroup>
+</Project>
